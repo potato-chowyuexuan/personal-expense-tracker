@@ -12,6 +12,7 @@ if __name__ == '__main__': #runs if this script is run directly (not imported as
 
 #POST endpoint to create a new expense
 from flask import request, jsonify
+from models import db, Expense
 
 @app.route('/expenses', methods=['POST']) #tells Flask when a request hits /expenses, and it's a POST request, execute function below
 def create_expense():
@@ -46,3 +47,7 @@ def create_expense():
             "date": expense.date
         }
     }), 201 #HTTP status code for created
+
+#GET endpoint to retrieve all expenses
+@app.route('/expenses', methods=['GET']) #when a GET request hits /expenses, execute function below
+def get_expenses():
