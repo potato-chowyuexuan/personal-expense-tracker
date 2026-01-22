@@ -59,6 +59,7 @@ Response:
 **Update an expense**
 
 **PUT /expenses/1**
+
 Request body:
 ```json
 {
@@ -150,4 +151,5 @@ Chow Yue Xuan
 
 ## Contact
 Email: chowyuexuan@gmail.com
+
 GitHub: https://github.com/potato-chowyuexuan
