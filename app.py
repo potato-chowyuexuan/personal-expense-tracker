@@ -50,3 +50,26 @@ def create_expense():
 
 #GET endpoint to retrieve all expenses
 @app.route('/expenses', methods=['GET'])
+def get_expenses():
+    expenses = Expense.query.all() #fetch all expense records from the database
+    expenses_list = [
+        {
+            "id": e.id,
+            "title": e.title,
+            "amount": e.amount,
+            "date": e.date
+        } for e in expenses
+    ] #list comprehension to create a list of expense dictionaries
+    return jsonify(expenses_list), 200
+
+#DELETE endpoint to delete an expense by ID
+@app.route("/expenses/<int:expense_id>", methods=['DELETE']) #methods act like an instruction to Flask on how to handle requests 
+def delete_expense(expense_id):
+    expense = Expense.query.get(expense_id) #fetch the expense record with the given ID from the database
+    if not expense: #check if the expense exists
+        return jsonify({"error": f"Expense with id {expense_id} not found"}), 404
+    
+    db.session.delete(expense) #delete the expense record from the session
+    db.session.commit() #commit the changes
+
+    return jsonify({"message": f"Expense with id {expense_id} deleted successfully"}), 200
