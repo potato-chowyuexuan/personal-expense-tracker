@@ -90,28 +90,28 @@ Response:
 ```
 ---
 
-#Tech Stack
+# Tech Stack
 
 **Backend**
-*Python
-*Flask
+* Python
+* Flask
 
 **Database**
-*SQLite
-*SQLAlchemy ORM
+* SQLite
+* SQLAlchemy ORM
 
 **Frontend (optional / for testing)**
-*HTML
-*CSS
-*JavaScript
+* HTML
+* CSS
+* JavaScript
 
 **Tools**
-*Git
-*GitHub
+* Git
+* GitHub
 
 ---
 
-#Getting Started
+# Getting Started
 
 **1. Clone the repository**
 ```bash
@@ -137,11 +137,11 @@ Use curl, Postman, or your browser (for GET endpoints)
 
 ---
 
-#Future Improvements
-*User authentication
-*Expense filtering by date or category
-*Frontend interface for easier interaction
-*Deployment to a cloud platform
+# Future Improvements
+* User authentication
+* Expense filtering by date or category
+* Frontend interface for easier interaction
+* Deployment to a cloud platform
 
 ---
 
