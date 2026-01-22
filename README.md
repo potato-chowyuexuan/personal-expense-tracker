@@ -43,7 +43,7 @@ Request body:
   "amount": 12.5,
   "date": "2026-01-19"
 }
-
+```
 Response:
 ```json
 {
@@ -55,7 +55,7 @@ Response:
     "date": "2026-01-19"
   }
 }
-
+```
 **Update an expense**
 
 **PUT /expenses/1**
@@ -65,7 +65,7 @@ Request body:
   "title": "Dinner",
   "amount": 20.0
 }
-
+```
 Response:
 ```json
 {
@@ -77,7 +77,7 @@ Response:
     "date": "2026-01-19"
   }
 }
-
+```
 **Delete an expense**
 
 **DELETE /expenses/1**
@@ -87,7 +87,7 @@ Response:
 {
   "message": "Expense with id 1 deleted successfully"
 }
-
+```
 ---
 
 #Tech Stack
@@ -117,21 +117,21 @@ Response:
 ```bash
 git clone https://github.com/potato-chowyuexuan/personal-expense-tracker
 cd personal-expense-tracker
-
+```
 **2. Create a virtual environment**
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux/macOS
 venv\Scripts\activate      # Windows
-
+```
 **3. Install dependencies**
 ```bash
 pip install -r requirements.txt
-
+```
 **4. Run the Flask application**
 ```bash
 flask run
-
+```
 **5. Test the API**
 Use curl, Postman, or your browser (for GET endpoints)
 
