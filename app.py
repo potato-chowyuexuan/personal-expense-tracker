@@ -49,5 +49,4 @@ def create_expense():
     }), 201 #HTTP status code for created
 
 #GET endpoint to retrieve all expenses
-@app.route('/expenses', methods=['GET']) #when a GET request hits /expenses, execute function below
-def get_expenses():
+@app.route('/expenses', methods=['GET'])
