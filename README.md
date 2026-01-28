@@ -134,6 +134,7 @@ pip install -r requirements.txt
 flask run
 ```
 **5. Test the API**
+
 Use curl, Postman, or your browser (for GET endpoints)
 
 ---
