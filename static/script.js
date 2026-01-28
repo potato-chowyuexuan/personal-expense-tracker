@@ -3,6 +3,36 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //select the form
     const form = document.getElementById("expense-form"); //const to declare form variable
 
+    //function to load and display expenses
+async function loadExpenses(){
+    try{
+        const response = await fetch("/expenses");
+        const expenses = await response.json();
+
+        const container = document.getElementById("expenses-list");
+        container.innerHTML = ""; //clear previous content
+
+        if(expenses.length === 0){
+            container.textContent = "No expenses recorded.";
+            return;
+        }
+
+        //create list items for each expense
+        const ul = document.createElement("ul");
+        expenses.forEach(exp=>{
+            const li = document.createElement("li");
+            li.textContent = `${exp.title} - $${exp.amount} - ${exp.date}`;
+            ul.appendChild(li); //add list item to ul
+        });
+
+        container.appendChild(ul);
+    } catch(error){
+        console.error("Error fetching expenses:", error); //if try fails, then catch
+    }
+}
+
+    loadExpenses(); //load existing expenses on page load
+
     //listen for form submission
     form.addEventListener("submit", async(event)=>{
         event.preventDefault(); //prevent default page reload
@@ -32,31 +62,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
 });
 
-//function to load and display expenses
-async function fetchExpenses(){
-    try{
-        const response = await fetch("/expenses");
-        const expenses = await response.json();
 
-        const container = document.getElementById("expenses-list");
-        container.innerHTML = ""; //clear previous content
-
-        if(expenses.length === 0){
-            container.textContent = "No expenses recorded.";
-            return;
-        }
-
-        //create list items for each expense
-        const ul = document.createElement("ul");
-        expenses.forEach(exp=>{
-            const li = document.createElement("li");
-            li.textContent = `${exp.title} - $${exp.amount} - ${exp.date}`;
-            ul.appendChild(li); //add list item to ul
-        });
-
-        container.appendChild(ul);
-    } catch(error){
-        console.error("Error fetching expenses:", error); //if try fails, then catch
-    }
-}
 

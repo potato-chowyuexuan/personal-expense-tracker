@@ -17,6 +17,7 @@ Build a backend web application that allows users to create, view, update, and d
 * Update an existing expense record
 * Delete an expense record
 * Input validation and error handling
+* Includes a basic browser-based interface for manual testing of API functionality
 
 ---
 
@@ -102,9 +103,8 @@ Response:
 * SQLAlchemy ORM
 
 **Frontend (optional / for testing)**
-* HTML
-* CSS
-* JavaScript
+* Basic HTML/CSS/JavaScript interface served by Flask
+* Used for manual interaction with the API
 
 **Tools**
 * Git
@@ -142,7 +142,6 @@ Use curl, Postman, or your browser (for GET endpoints)
 # Future Improvements
 * User authentication
 * Expense filtering by date or category
-* Frontend interface for easier interaction
 * Deployment to a cloud platform
 
 ---
